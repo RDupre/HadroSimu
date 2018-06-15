@@ -1,0 +1,102 @@
+{
+   gStyle->SetTextFont(2);
+   gStyle->SetPadTopMargin(0.05);
+   gStyle->SetPadRightMargin(0.05);
+   gStyle->SetPadBottomMargin(0.12);
+   gStyle->SetPadLeftMargin(0.12);
+   gStyle->SetOptTitle(0);
+   gStyle->SetOptStat(0);
+   gStyle->SetOptFit(0);
+   gStyle->SetPadTickX(1);
+   gStyle->SetPadTickY(1);
+   gStyle->SetHistLineWidth(2.5);
+   gStyle->SetLineWidth(2.);
+
+   TCanvas *c1  = new TCanvas("c1 ", "c1 ",67,1133,500,500);
+   c1->Range(0,0,1,1);
+   c1->SetFillColor(0);
+   c1->SetBorderMode(0);
+   c1->SetBorderSize(2);
+   c1->SetFrameBorderMode(0);
+   c1->SetLogx(1);
+   c1->SetLeftMargin(0.17);
+   
+   TH2F *cnu_r = new TH2F("cnu_r","Comparison PyQM with HERMES",20,1.9,27.,50,0.95,1.1);
+   cnu_r->SetStats(0);
+
+   Int_t ci;   // for color index setting
+   ci = TColor::GetColor("#000099");
+   cnu_r->SetLineColor(ci);
+   cnu_r->GetXaxis()->SetTitle("#nu (GeV)");
+   cnu_r->GetXaxis()->CenterTitle(true);
+   cnu_r->GetYaxis()->SetTitle("R^{#pi^{+}}_{A}");
+   cnu_r->GetYaxis()->CenterTitle(true);
+   cnu_r->GetXaxis()->SetLabelSize(0.044);
+   cnu_r->GetXaxis()->SetTitleSize(0.058);
+   cnu_r->GetXaxis()->SetTitleFont(2);
+   cnu_r->GetXaxis()->SetTitleOffset(.95);
+   cnu_r->GetYaxis()->SetLabelSize(0.044);
+   cnu_r->GetYaxis()->SetTitleSize(0.058);
+   cnu_r->GetYaxis()->SetTitleFont(2);
+   cnu_r->GetYaxis()->SetTitleOffset(1.35);
+   cnu_r->Draw("");
+   
+   TGraphErrors *gr1 = new TGraphErrors(8);
+   gr1->SetName("Graph");
+   gr1->SetTitle("Graph");
+   gr1->SetFillColor(1);
+   gr1->SetLineColor(2);
+   gr1->SetLineStyle(1);
+   gr1->SetLineWidth(3);
+   gr1->SetPoint(0,2.140625,1.043483);
+   gr1->SetPoint(1,2.421875,1.042345);
+   gr1->SetPoint(2,2.703125,1.039857);
+   gr1->SetPoint(3,2.984375,1.01255);
+   gr1->SetPoint(4,3.265625,0.998497);
+   gr1->SetPoint(5,3.546875,0.9939075);
+   gr1->SetPoint(6,3.828125,0.9957058);
+   gr1->SetPoint(7,4.109375,0.9946407);
+   gr1->Draw("c");
+   TGraphErrors *gr2 = new TGraphErrors(8);
+   gr2->SetName("Graph");
+   gr2->SetTitle("Graph");
+   gr2->SetFillColor(1);
+   gr2->SetLineColor(3);
+   gr2->SetLineStyle(2);
+   gr2->SetLineWidth(3);
+   gr2->SetPoint(0,2.140625,1.013031);
+   gr2->SetPoint(1,2.421875,1.007499);
+   gr2->SetPoint(2,2.703125,1.00902);
+   gr2->SetPoint(3,2.984375,1.003955);
+   gr2->SetPoint(4,3.265625,1.002147);
+   gr2->SetPoint(5,3.546875,1.000118);
+   gr2->SetPoint(6,3.828125,0.9999418);
+   gr2->SetPoint(7,4.109375,0.9996852);
+   gr2->Draw("c");
+   TGraphErrors *gr3 = new TGraphErrors(8);
+   gr3->SetName("Graph");
+   gr3->SetTitle("Graph");
+   gr3->SetFillColor(1);
+   gr3->SetLineColor(4);
+   gr3->SetLineStyle(4);
+   gr3->SetLineWidth(3);
+   gr3->SetPoint(0,5.25,0.9847256);
+   gr3->SetPoint(1,7.75,0.9984332);
+   gr3->SetPoint(2,10.25,0.998249);
+   gr3->SetPoint(3,12.75,0.9988364);
+   gr3->SetPoint(4,15.25,0.9997323);
+   gr3->SetPoint(5,17.75,0.9999724);
+   gr3->SetPoint(6,20.25,0.9994971);
+   gr3->SetPoint(7,22.75,1.000003);
+   gr3->Draw("c");
+
+   leg = new TLegend(0.47,0.71,0.90,0.90);
+   leg->AddEntry(gr1,"CLAS Fe/D","l");
+   leg->AddEntry(gr2,"CLAS Pb/C","l");
+   leg->AddEntry(gr3,"HERMES Xe/D","l");
+   leg->Draw();
+
+   c1->Modified();
+   c1 ->cd();
+   c1 ->SetSelected(c1 );
+}

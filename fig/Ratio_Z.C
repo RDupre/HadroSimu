@@ -1,0 +1,171 @@
+{
+   gStyle->SetTextFont(2);
+   gStyle->SetPadTopMargin(0.05);
+   gStyle->SetPadRightMargin(0.05);
+   gStyle->SetPadBottomMargin(0.12);
+   gStyle->SetPadLeftMargin(0.12);
+   gStyle->SetOptTitle(0);
+   gStyle->SetOptStat(0);
+   gStyle->SetOptFit(0);
+   gStyle->SetPadTickX(1);
+   gStyle->SetPadTickY(1);
+   gStyle->SetHistLineWidth(2.5);
+   gStyle->SetLineWidth(2.);
+
+   TCanvas *c1  = new TCanvas("c1 ", "c1 ",67,1133,500,500);
+   c1->Range(0,0,1,1);
+   c1->SetFillColor(0);
+   c1->SetBorderMode(0);
+   c1->SetBorderSize(2);
+   c1->SetFrameBorderMode(0);
+   c1->SetLeftMargin(0.17);
+   
+   TH2F *cnu_r = new TH2F("cnu_r","Comparison PyQM with HERMES",20,0.0,1.0,50,0.40,1.0);
+   cnu_r->SetStats(0);
+
+   Int_t ci;   // for color index setting
+   ci = TColor::GetColor("#000099");
+   cnu_r->SetLineColor(ci);
+   cnu_r->GetXaxis()->SetTitle("z");
+   cnu_r->GetXaxis()->CenterTitle(true);
+   cnu_r->GetYaxis()->SetTitle("R^{#pi^{+}}_{A}");
+   cnu_r->GetYaxis()->CenterTitle(true);
+   cnu_r->GetXaxis()->SetLabelSize(0.044);
+   cnu_r->GetXaxis()->SetTitleSize(0.058);
+   cnu_r->GetXaxis()->SetTitleFont(2);
+   cnu_r->GetXaxis()->SetTitleOffset(0.95);
+   cnu_r->GetYaxis()->SetLabelSize(0.044);
+   cnu_r->GetYaxis()->SetTitleSize(0.058);
+   cnu_r->GetYaxis()->SetTitleFont(2);
+   cnu_r->GetYaxis()->SetTitleOffset(1.35);
+   cnu_r->Draw("");
+   
+   TGraphErrors *gr4 = new TGraphErrors(8);
+   gr4->SetName("Graph");
+   gr4->SetTitle("Graph");
+   gr4->SetFillColor(1);
+   gr4->SetMarkerColor(1);
+   gr4->SetMarkerStyle(22);
+   gr4->SetLineColor(1);
+   gr4->SetLineStyle(1);
+   gr4->SetLineWidth(3);
+   gr4->SetPoint(0,0.0625,0.9557014);
+   gr4->SetPoint(1,0.1875,0.9350641);
+   gr4->SetPoint(2,0.3125,0.9273009);
+   gr4->SetPoint(3,0.4375,0.9144412);
+   gr4->SetPoint(4,0.5625,0.9028621);
+   gr4->SetPoint(5,0.6875,0.8795478);
+   gr4->SetPoint(6,0.8125,0.872602);
+   gr4->SetPoint(7,0.9375,0.8446229);
+   gr4->Draw("c");
+   
+   TGraphErrors *gr5 = new TGraphErrors(8);
+   gr5->SetName("Graph");
+   gr5->SetTitle("Graph");
+   gr5->SetFillColor(1);
+   gr5->SetMarkerColor(3);
+   gr5->SetMarkerStyle(23);
+   gr5->SetLineColor(3);
+   gr5->SetLineStyle(2);
+   gr5->SetLineWidth(3);
+   gr5->SetPoint(0,0.0625,0.8155315);
+   gr5->SetPoint(1,0.1875,0.7936643);
+   gr5->SetPoint(2,0.3125,0.7783843);
+   gr5->SetPoint(3,0.4375,0.7582409);
+   gr5->SetPoint(4,0.5625,0.7325442);
+   gr5->SetPoint(5,0.6875,0.706592);
+   gr5->SetPoint(6,0.8125,0.6982073);
+   gr5->SetPoint(7,0.9375,0.6785373);
+   gr5->Draw("c");
+   
+   TGraphErrors *gr6 = new TGraphErrors(8);
+   gr6->SetName("Graph");
+   gr6->SetTitle("Graph");
+   gr6->SetFillColor(1);
+   gr6->SetMarkerColor(4);
+   gr6->SetMarkerStyle(21);
+   gr6->SetLineColor(4);
+   gr6->SetLineStyle(4);
+   gr6->SetLineWidth(3);
+   gr6->SetPoint(0,0.0625,0.7588531);
+   gr6->SetPoint(1,0.1875,0.7326545);
+   gr6->SetPoint(2,0.3125,0.717241);
+   gr6->SetPoint(3,0.4375,0.6937625);
+   gr6->SetPoint(4,0.5625,0.6682632);
+   gr6->SetPoint(5,0.6875,0.639406);
+   gr6->SetPoint(6,0.8125,0.6335352);
+   gr6->SetPoint(7,0.9375,0.5947776);
+   gr6->Draw("c");
+   
+
+
+   TGraphErrors *gr1 = new TGraphErrors(9);
+   gr1->SetName("Graph");
+   gr1->SetTitle("Graph");
+   gr1->SetFillColor(1);
+   gr1->SetLineWidth(2);
+   gr1->SetMarkerColor(1);
+   gr1->SetMarkerStyle(22);
+   gr1->SetLineColor(1);
+   gr1->SetPoint(0, 0.1495, 0.9122); gr1->SetPointError(0, 0, 0.0346);
+   gr1->SetPoint(1, 0.2731, 0.9057); gr1->SetPointError(1, 0, 0.0347);
+   gr1->SetPoint(2, 0.3489, 0.8949); gr1->SetPointError(2, 0, 0.0332);
+   gr1->SetPoint(3, 0.4467, 0.8789); gr1->SetPointError(3, 0, 0.0321);
+   gr1->SetPoint(4, 0.5448, 0.8921); gr1->SetPointError(4, 0, 0.0324);
+   gr1->SetPoint(5, 0.6449, 0.8870); gr1->SetPointError(5, 0, 0.0334);
+   gr1->SetPoint(6, 0.7437, 0.9032); gr1->SetPointError(6, 0, 0.0359);
+   gr1->SetPoint(7, 0.8456, 0.8772); gr1->SetPointError(7, 0, 0.0444);
+   gr1->SetPoint(8, 0.9401, 0.7711); gr1->SetPointError(8, 0, 0.0403);
+   gr1->Draw("p");
+   
+   TGraphErrors *gr2 = new TGraphErrors(9);
+   gr2->SetName("Graph");
+   gr2->SetTitle("Graph");
+   gr2->SetFillColor(1);
+   gr2->SetMarkerColor(3);
+   gr2->SetMarkerStyle(23);
+   gr2->SetLineColor(3);
+   gr2->SetLineWidth(2);
+   gr2->SetPoint(0, 0.1668, 0.8341); gr2->SetPointError(0, 0, 0.0327);
+   gr2->SetPoint(1, 0.2466, 0.7979); gr2->SetPointError(1, 0, 0.0314);
+   gr2->SetPoint(2, 0.3460, 0.7726); gr2->SetPointError(2, 0, 0.0297);
+   gr2->SetPoint(3, 0.4459, 0.7603); gr2->SetPointError(3, 0, 0.0288);
+   gr2->SetPoint(4, 0.5464, 0.7328); gr2->SetPointError(4, 0, 0.0273);
+   gr2->SetPoint(5, 0.6468, 0.7257); gr2->SetPointError(5, 0, 0.0282);
+   gr2->SetPoint(6, 0.7477, 0.7007); gr2->SetPointError(6, 0, 0.0295);
+   gr2->SetPoint(7, 0.8461, 0.6641); gr2->SetPointError(7, 0, 0.0370);
+   gr2->SetPoint(8, 0.9361, 0.5775); gr2->SetPointError(8, 0, 0.0338);
+   gr2->Draw("p");
+
+   TGraphErrors *gr3 = new TGraphErrors(9);
+   gr3->SetName("Graph");
+   gr3->SetTitle("Graph");
+   gr3->SetFillColor(1);
+   gr3->SetMarkerColor(4);
+   gr3->SetMarkerStyle(21);
+   gr3->SetLineColor(4);
+   gr3->SetLineWidth(2);
+   gr3->SetPoint(0, 0.1666, 0.8001); gr3->SetPointError(0, 0, 0.0321);
+   gr3->SetPoint(1, 0.2467, 0.7462); gr3->SetPointError(1, 0, 0.0309);
+   gr3->SetPoint(2, 0.3463, 0.7265); gr3->SetPointError(2, 0, 0.0289);
+   gr3->SetPoint(3, 0.4459, 0.7080); gr3->SetPointError(3, 0, 0.0273);
+   gr3->SetPoint(4, 0.5468, 0.6795); gr3->SetPointError(4, 0, 0.0261);
+   gr3->SetPoint(5, 0.6473, 0.6540); gr3->SetPointError(5, 0, 0.0266);
+   gr3->SetPoint(6, 0.7464, 0.6397); gr3->SetPointError(6, 0, 0.0285);
+   gr3->SetPoint(7, 0.8453, 0.5953); gr3->SetPointError(7, 0, 0.0362);
+   gr3->SetPoint(8, 0.9374, 0.5530); gr3->SetPointError(8, 0, 0.0363);
+   gr3->Draw("p");
+
+   leg = new TLegend(0.22,0.17,0.55,0.47);
+   leg->AddEntry(gr1,"HERMES Ne","p");
+   leg->AddEntry(gr4,"MC Simul Ne","l");
+   leg->AddEntry(gr2,"HERMES Kr","p");
+   leg->AddEntry(gr5,"MC Simul Kr","l");
+   leg->AddEntry(gr3,"HERMES Xe","p");
+   leg->AddEntry(gr6,"MC Simul Xe","l");
+   leg->Draw();
+
+   c1->Modified();
+   c1 ->cd();
+   c1 ->SetSelected(c1 );
+}

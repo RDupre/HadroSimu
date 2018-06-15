@@ -1,0 +1,132 @@
+{
+   gStyle->SetTextFont(2);
+   gStyle->SetPadTopMargin(0.05);
+   gStyle->SetPadRightMargin(0.05);
+   gStyle->SetPadBottomMargin(0.12);
+   gStyle->SetPadLeftMargin(0.12);
+   gStyle->SetOptTitle(0);
+   gStyle->SetOptStat(0);
+   gStyle->SetOptFit(0);
+   gStyle->SetPadTickX(1);
+   gStyle->SetPadTickY(1);
+   gStyle->SetHistLineWidth(2.5);
+   gStyle->SetLineWidth(2.);
+
+   TCanvas *PtBroad  = new TCanvas("HERMES Transverse Momentum Broadening", "HERMES Transverse Momentum Broadening",931,49,500,500);
+   PtBroad->Range(1,1,0,0);
+   PtBroad->SetBorderMode(0);
+   PtBroad->SetBorderSize(2);
+   PtBroad->SetFrameFillColor(0);
+   PtBroad->SetFrameBorderMode(0);
+   PtBroad->SetLeftMargin(0.17);
+   
+   TH1 *cnu_p = new TH2F("cnu_p"," ",10,0.2,1,5,-0.025,0.11);
+   cnu_p->SetStats(0);
+   cnu_p->GetXaxis()->SetTitle("z");
+   cnu_p->GetXaxis()->CenterTitle(true);
+   cnu_p->GetYaxis()->SetTitle("#DeltaP_{T}^{2} (GeV^{2})");
+   cnu_p->GetYaxis()->CenterTitle(true);
+   cnu_p->GetYaxis()->SetTitleOffset(1.35);
+   cnu_p->GetXaxis()->SetTitleOffset(0.95);
+   cnu_p->GetXaxis()->SetLabelSize(0.044);
+   cnu_p->GetXaxis()->SetTitleSize(0.058);
+   cnu_p->GetXaxis()->SetTitleFont(2);
+   cnu_p->GetYaxis()->SetLabelSize(0.044);
+   cnu_p->GetYaxis()->SetTitleSize(0.058);
+   cnu_p->GetYaxis()->SetTitleFont(2);
+   cnu_p->Draw("");
+
+// HERMES pip//
+   TGraphErrors *gr4 = new TGraphErrors(4);
+   gr4->SetName("Graph");
+   gr4->SetTitle("Graph");
+   gr4->SetFillColor(1);
+   gr4->SetMarkerStyle(8);
+   gr4->SetMarkerColor(1);
+   gr4->SetLineColor(1);
+   gr4->SetPoint(0,0.31, 0.0285); gr4->SetPointError(0,0,0.0000);
+   gr4->SetPoint(1,0.51, 0.0338); gr4->SetPointError(1,0,0.0047);
+   gr4->SetPoint(2,0.71, 0.0125); gr4->SetPointError(2,0,0.0103);
+   gr4->SetPoint(3,0.90,-0.0015); gr4->SetPointError(3,0,0.0148);
+   gr4->Draw("p");
+
+   TGraphErrors *gr0 = new TGraphErrors(8);
+   gr0->SetName("Graph");
+   gr0->SetTitle("Graph");
+   gr0->SetFillColor(1);
+   gr0->SetLineColor(6);
+   gr0->SetLineStyle(4);
+   gr0->SetLineWidth(3);
+   gr0->SetPoint(0,0.0625,0.001556307);
+   gr0->SetPoint(1,0.1875,0.0009010732);
+   gr0->SetPoint(2,0.3125,-0.0003991723);
+   gr0->SetPoint(3,0.4375,-0.005719841);
+   gr0->SetPoint(4,0.5625,-0.007259965);
+   gr0->SetPoint(5,0.6875,-0.002782643);
+   gr0->SetPoint(6,0.8125,-0.00276196);
+   gr0->SetPoint(7,0.9375,0.01465729);
+   gr0->Draw("c");
+   
+   TGraphErrors *gr1 = new TGraphErrors(8);
+   gr1->SetName("Graph");
+   gr1->SetTitle("Graph");
+   gr1->SetFillColor(1);
+   gr1->SetLineColor(4);
+   gr1->SetLineStyle(2);
+   gr1->SetLineWidth(3);
+   gr1->SetPoint(0,0.0625,0.005623057);
+   gr1->SetPoint(1,0.1875,0.0183873);
+   gr1->SetPoint(2,0.3125,0.03746691);
+   gr1->SetPoint(3,0.4375,0.03992677);
+   gr1->SetPoint(4,0.5625,0.03198856);
+   gr1->SetPoint(5,0.6875,0.02706987);
+   gr1->SetPoint(6,0.8125,0.01842046);
+   gr1->SetPoint(7,0.9375,0.02103007);
+   gr1->Draw("c");
+   
+   TGraphErrors *gr2 = new TGraphErrors(8);
+   gr2->SetName("Graph");
+   gr2->SetTitle("Graph");
+   gr2->SetFillColor(1);
+   gr2->SetLineColor(3);
+   gr2->SetLineStyle(1);
+   gr2->SetLineWidth(3);
+   gr2->SetPoint(0,0.0625,0.009945005);
+   gr2->SetPoint(1,0.1875,0.03135903);
+   gr2->SetPoint(2,0.3125,0.06307897);
+   gr2->SetPoint(3,0.4375,0.06294048);
+   gr2->SetPoint(4,0.5625,0.04618716);
+   gr2->SetPoint(5,0.6875,0.03180391);
+   gr2->SetPoint(6,0.8125,0.02043468);
+   gr2->SetPoint(7,0.9375,0.02166119);
+   gr2->Draw("c");
+   
+   TGraphErrors *gr3 = new TGraphErrors(8);
+   gr3->SetName("Graph");
+   gr3->SetTitle("Graph");
+   gr3->SetFillColor(1);
+   gr3->SetLineColor(2);
+   gr3->SetLineStyle(8);
+   gr3->SetLineWidth(3);
+   gr3->SetPoint(0,0.0625,0.006215602);
+   gr3->SetPoint(1,0.1875,0.01830845);
+   gr3->SetPoint(2,0.3125,0.03610095);
+   gr3->SetPoint(3,0.4375,0.03369975);
+   gr3->SetPoint(4,0.5625,0.02183723);
+   gr3->SetPoint(5,0.6875,0.01520967);
+   gr3->SetPoint(6,0.8125,0.008505464);
+   gr3->SetPoint(7,0.9375,0.01345134);
+   gr3->Draw("c");
+   
+   leg = new TLegend(0.45,0.67,0.90,0.90);
+   leg->AddEntry(gr4,"HERMES data (Xe)","p");
+   leg->AddEntry(gr0,"No P_{T}","l");
+   leg->AddEntry(gr1,"Constant","l");
+   leg->AddEntry(gr2,"BDMPS mean","l");
+   leg->AddEntry(gr3,"Event by event MC","l");
+   leg->Draw();
+
+   PtBroad->Modified();
+   PtBroad ->cd();
+   PtBroad ->SetSelected(PtBroad );
+}

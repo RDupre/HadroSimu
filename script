@@ -1,0 +1,10 @@
+#! /bin/bash
+
+latex PyQM.tex
+bibtex PyQM
+latex PyQM.tex
+latex PyQM.tex
+dvipdf PyQM.dvi
+
+tar -cf PyQM.tar hadro.bib PyQM.tex svjour.cls epj.bst PyQM.pdf script fig/*.eps svepj.clo
+
