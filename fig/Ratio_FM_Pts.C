@@ -93,7 +93,7 @@
    
    leg = new TLegend(0.22,0.71,0.65,0.90);
    leg->AddEntry(gr1,"CLAS Fe/D","l");
-   leg->AddEntry(gr2,"CLAS Fe/C","l");
+   leg->AddEntry(gr2,"CLAS Pb/C","l");
    leg->AddEntry(gr3,"HERMES Xe/D","l");
    leg->Draw();
 

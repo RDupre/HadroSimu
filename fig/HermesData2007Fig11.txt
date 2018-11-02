@@ -1,0 +1,45 @@
+
+**************************************************************************
+
+   These are published data of the HERMES Collaboration.                  
+   You are free to use these data in any publication. However, you must   
+   make a reference to the following publication:                         
+
+   A. Airapetian et al, Nucl. Phys. B 780 (2007) 1-27 
+
+**************************************************************************
+
+############################################################################
+# Notes: (see the paper for further details)                               #
+#                                                                          #
+# Kinematic cuts: nu > 6 GeV, 0.3 < z < 0.7                                #
+#                                                                          #
+# Lc = z^0.35*(1-z)*nu/kappa, kappa = 1GeV/fm                              #
+#                                                                          #
+# Fit over the atomic mass number A is done with exp(-beta(A/100)^alpha)   #
+# using R values for the combined pi+ and pi- sample for four nuclei:      #
+# He, Ne, Kr and Xe.                                                       #
+############################################################################
+                
+
+---------------------------------------
+  Lc (fm)       alpha            stat.				
+----------------------------------------
+  3.09  	0.64    	0.021
+  4.49  	0.60    	0.017
+  5.94  	0.55    	0.020
+  7.36  	0.51    	0.028
+  8.94  	0.47    	0.046
+
+
+---------------------------------------
+  Lc (fm)       beta             stat.
+---------------------------------------
+  3.09  	0.42    	0.006
+  4.49  	0.35    	0.004
+  5.94  	0.29    	0.004
+  7.36   	0.24    	0.005
+  8.94  	0.19    	0.006
+
+
+

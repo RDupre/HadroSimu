@@ -23,7 +23,7 @@
    c8->SetLeftMargin(0.17);
    c8->SetLogx();
    
-   TH2F *cq2_p = new TH2F("cq2_p","#DeltaP_{T}^{2} % Q^{2}",25,1,10,5,-0.02,0.10);
+   TH2F *cq2_p = new TH2F("cq2_p","#DeltaP_{T}^{2} % Q^{2}",25,1,10,5,-0.02,0.14);
    cq2_p->SetStats(0);
    cq2_p->GetXaxis()->SetTitle("Q^{2} (GeV^{2})");
    cq2_p->GetXaxis()->CenterTitle(true);
@@ -57,13 +57,13 @@
    gr0->SetLineColor(6);
    gr0->SetLineStyle(4);
    gr0->SetLineWidth(3);
-   gr0->SetPoint(0,1.5,-0.009312123);
-   gr0->SetPoint(1,2.5,-0.009502351);
-   gr0->SetPoint(2,3.5,-0.01022333);
-   gr0->SetPoint(3,4.5,-0.009217352);
-   gr0->SetPoint(4,5.5,-0.01020306);
-   gr0->SetPoint(5,6.5,-0.006372333);
-   gr0->SetPoint(6,7.5,-0.006408304);
+   gr0->SetPoint(0,1.64,-0.0077534);
+   gr0->SetPoint(1,2.92,-0.0075716);
+   gr0->SetPoint(2,4.21,-0.0066309);
+   gr0->SetPoint(3,5.5 ,-0.0073402);
+   gr0->SetPoint(4,6.78,-0.0104855);
+   gr0->SetPoint(5,8.07,-0.0113481);
+   gr0->SetPoint(6,9.35,-0.0088418);
    gr0->Draw("c");
    
    TGraphErrors *gr1 = new TGraphErrors(7);
@@ -73,13 +73,13 @@
    gr1->SetLineColor(4);
    gr1->SetLineStyle(2);
    gr1->SetLineWidth(3);
-   gr1->SetPoint(0,1.5,0.02781597);
-   gr1->SetPoint(1,2.5,0.02705804);
-   gr1->SetPoint(2,3.5,0.02642381);
-   gr1->SetPoint(3,4.5,0.02778473);
-   gr1->SetPoint(4,5.5,0.02763641);
-   gr1->SetPoint(5,6.5,0.03073215);
-   gr1->SetPoint(6,7.5,0.02955478);
+   gr1->SetPoint(0,1.64,0.03456789);
+   gr1->SetPoint(1,2.92,0.03534269);
+   gr1->SetPoint(2,4.21,0.03468633);
+   gr1->SetPoint(3,5.5 ,0.03700295);
+   gr1->SetPoint(4,6.78,0.03682795);
+   gr1->SetPoint(5,8.07,0.03354686);
+   gr1->SetPoint(6,9.35,0.03854367);
    gr1->Draw("c");
    
    TGraphErrors *gr2 = new TGraphErrors(7);
@@ -89,13 +89,13 @@
    gr2->SetLineColor(3);
    gr2->SetLineStyle(1);
    gr2->SetLineWidth(3);
-   gr2->SetPoint(0,1.5,0.05167317);
-   gr2->SetPoint(1,2.5,0.05066368);
-   gr2->SetPoint(2,3.5,0.04784024);
-   gr2->SetPoint(3,4.5,0.05045101);
-   gr2->SetPoint(4,5.5,0.04884648);
-   gr2->SetPoint(5,6.5,0.05060044);
-   gr2->SetPoint(6,7.5,0.05037647);
+   gr2->SetPoint(0,1.64,0.07271594);
+   gr2->SetPoint(1,2.92,0.07262775);
+   gr2->SetPoint(2,4.21,0.07352349);
+   gr2->SetPoint(3,5.5 ,0.07566404);
+   gr2->SetPoint(4,6.78,0.07622308);
+   gr2->SetPoint(5,8.07,0.07577783);
+   gr2->SetPoint(6,9.35,0.07967934);
    gr2->Draw("c");
    
    TGraphErrors *gr3 = new TGraphErrors(7);
@@ -105,13 +105,13 @@
    gr3->SetLineColor(2);
    gr3->SetLineStyle(8);
    gr3->SetLineWidth(3);
-   gr3->SetPoint(0,1.5,0.02584568);
-   gr3->SetPoint(1,2.5,0.02498206);
-   gr3->SetPoint(2,3.5,0.02429259);
-   gr3->SetPoint(3,4.5,0.02555761);
-   gr3->SetPoint(4,5.5,0.02565283);
-   gr3->SetPoint(5,6.5,0.02756089);
-   gr3->SetPoint(6,7.5,0.02765819);
+   gr3->SetPoint(0,1.64,0.0347300);
+   gr3->SetPoint(1,2.92,0.0348123);
+   gr3->SetPoint(2,4.21,0.0357447);
+   gr3->SetPoint(3,5.5 ,0.0382404);
+   gr3->SetPoint(4,6.78,0.0386449);
+   gr3->SetPoint(5,8.07,0.0367561);
+   gr3->SetPoint(6,9.35,0.0429749);
    gr3->Draw("c");
    
    leg = new TLegend(0.22,0.67,0.67,0.90);
