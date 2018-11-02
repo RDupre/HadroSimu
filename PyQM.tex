@@ -223,7 +223,7 @@ number of hadrons detected in coincidence with the scattered electron measured o
 %
 The second observable of interest is the hadron transverse momentum broadening. It is defined as the difference
 \begin{equation}
-\Delta \langle P_T^2 \rangle = \langle p_T^2 \rangle_A - \langle p_T^2 \rangle_{D},
+\Delta \langle p_T^2 \rangle = \langle p_T^2 \rangle_A - \langle p_T^2 \rangle_{D},
 \end{equation}
 of the mean transverse momentum squared $\langle p_T^2 \rangle_A$ the mean $p_T^2$ of hadrons produced off a target $A$ and off the Deuteron. This quantity is typically positive, and indicates that the parton or the hadrons are gaining transverse momentum due to reinteraction within the nuclear medium.
 
@@ -280,7 +280,7 @@ Indeed, we expect that Fermi motion will affect the hadron multiplicity because 
 With large numbers of events these effects should mostly cancel because higher than average electron-nucleon energies will compensate lower than average ones, but it is important to evaluate the residual effects with our MC simulation. 
 
 The typical Fermi momentum is of the order of a few hundreds of MeV, and is therefore expected to have limited impact on multiplicities ratios measured at the HERMES experiment (electron or positron beam of 27.5~GeV). However, as we shall see, its impact on ratios from the CLAS experiments at JLab, for which preliminary data with a 5~GeV electron beam are available~\cite{Brooks:2009xg,DupreQNP}), is typically non negligible. 
-Moreover, due to the rapidly decreasing $p_T$ spectrum, it is unclear how effects on $i\Delta p_T^2$ are reduced at high energy and Fermi motion can affect even HERMES data for this observable.
+Moreover, due to the rapidly decreasing $p_T$ spectrum, it is unclear how effects on $\Delta p_T^2$ are reduced at high energy and Fermi motion can affect even HERMES data for this observable.
 
 In absence of Fermi motion all nucleons are consiered at rest in the nucleus frame. 
 Fermi motion is therefore implemented in our MC by assigning the target nucleon an initial 3-momentum before running Pythia. The nucleon three momenta are then distributed on the full solid angle with a distribution in magnitude taken from the parametrization by Ciofi degli Atti and Simula \cite{CiofidegliAtti:1995qe}.
@@ -291,10 +291,10 @@ In Figure~\ref{fig:FM-R} we show the results of the described MC simulation on t
 The effects of Fermi motion on the hadrons $p_T$ spectrum, which are expected to be the largest, are shown in figure~\ref{fig:FM-Rpt-DPtz}. In the case of the multiplicity ratio $R_M$ as a function of $p_T^2$ (left panel), and for the 
 hadron $p_T$-broadening $\Delta p_T^2$ as a function of $z$.
 At HERMES energy no sizable effect is visible on $R_M$. However, at CLAS energy a very large effect is observed. This is particularly problematic because this signal can mimic the Cronin effect due to in-medium multiple soft scattering~\cite{Kopeliovich:2003py}, and limit the interpretability of CLAS measurements in terms of medium modification of parton propagation.
-Similarly to the effects on the $p_T$ spectrum, FM generates an initial state transverse momentum broadening. This however can be expected to be less sensitive to energy variations because in $\Delta P_T^2$ the effect is relative to the average transverse momenta in which proportionnaly varies less than the beam energy.
+Similarly to the effects on the $p_T$ spectrum, FM generates an initial state transverse momentum broadening. This however can be expected to be less sensitive to energy variations because in $\Delta p_T^2$ the effect is relative to the average transverse momenta in which proportionnaly varies less than the beam energy.
 Indeed, the result of our simulation at HERMES energy indicates a small but clear FM effect, which corresponds to 5--10\% of the total observed broadening. The effect grows with $z$ as should be expected, because the fraction of energy carried by the hadron is proportionnal to the fraction of transverse momentum transferred from the parton to the hadron. 
 
-In order to reduce FM effects for all observables at CLAS energy (and eventually for future experiments) but not unduly cancel the effects from final state interactions with the medium, we propose to utilize Carbon (instead of Deuteron) as the reference nucleus in the denominator of the multiplicity ratio and for transverse momentum broadening. Indeed, the average nucleon momentum vary very little from Carbon to Lead \cite{CiofidegliAtti:1995qe} making the Fermi motion effects similar and therefore cancel them for the $R_M$ and $\Delta P_T^2$ observables. The green dotted lines in Figures \ref{fig:FM-R} and \ref{fig:FM-Rpt-DPtz} show a significant reduction of FM effects in the multiplicity ratio using this option. In particular, the FM effects are brought below the 0.5\% level in the transverse momentum broadening.
+In order to reduce FM effects for all observables at CLAS energy (and eventually for future experiments) but not unduly cancel the effects from final state interactions with the medium, we propose to utilize Carbon (instead of Deuteron) as the reference nucleus in the denominator of the multiplicity ratio and for transverse momentum broadening. Indeed, the average nucleon momentum vary very little from Carbon to Lead \cite{CiofidegliAtti:1995qe} making the Fermi motion effects similar and therefore cancel them for the $R_M$ and $\Delta p_T^2$ observables. The green dotted lines in Figures \ref{fig:FM-R} and \ref{fig:FM-Rpt-DPtz} show a significant reduction of FM effects in the multiplicity ratio using this option. In particular, the FM effects are brought below the 0.5\% level in the transverse momentum broadening.
 
 
 \section{Parton radiative energy loss}
@@ -314,7 +314,7 @@ which accounts for thr fact that the transverse momentum of a radiated gluon can
 \begin{align}
   \PP(\epsilon) = p(\epsilon) + p_0 \delta(\epsilon) 
 \end{align}
-which encodes the probability distribution for energy loss $\epsilon$ in a medium of length $L$ and transport coefficeint $\hat q$. Here, $p(\epsilon)$ its continuous part and $p_0$ the probability that the parton traverses the medium with no reinteractions, and tehrefore no energy loss. {\bf [AA] Add discussion of ``death on arrival'' here? Or later when we give more details?}
+which encodes the probability distribution for energy loss $\epsilon$ in a medium of length $L$ and transport coefficeint $\hat q$. Here, $p(\epsilon)$ its continuous part and $p_0$ the probability that the parton traverses the medium with no reinteractions, and therefore no energy loss. {\bf [AA] Add discussion of ``death on arrival'' here? Or later when we give more details?}
 
 \begin{figure}[tbp]
   \centering
@@ -549,7 +549,7 @@ result: $\qhat = 0.14$ GeV$^2$/fm~\cite{Arleo:2002ph,Arleo:2003jz}. Possible
 reasons for this discrepancy are that Arleo's computation is done at fixed 
 length $\bar L_A = (3/4) R_A$, and does not include finite size corrections 
 ($\bar R = \infty$) and that Arleo uses $\alpha_s=0.5$ and ASW use 
-$\alpha_s=0.3$ in their quenching weight computation. An extraction of the transport coefficient that includes the nuclear geometry and finite length effects as in this paper, but otherwise relies on an analytical calculation as in teh rpevious paper, was first obtained by Accardi \cite{Accardi:2007in} and later updated in Ref.~\cite{Accardi:2009qv}, resulting in a five times larger vale of $\hat q = 0.6$ GeV$^2$/fm. This shows how realistic geometry effects affect the quantitative extraction of the transport coefficient, as well as the relevance of a MC decription of hadronization that again reduces that value. 
+$\alpha_s=0.3$ in their quenching weight computation. An extraction of the transport coefficient that includes the nuclear geometry and finite length effects as in this paper, but otherwise relies on an analytical calculation as in teh previous paper, was first obtained by Accardi \cite{Accardi:2007in} and later updated in Ref.~\cite{Accardi:2009qv}, resulting in a five times larger vale of $\hat q = 0.6$ GeV$^2$/fm. This shows how realistic geometry effects affect the quantitative extraction of the transport coefficient, as well as the relevance of a MC decription of hadronization that again reduces that value. 
 
 {\bf [RD] do we have other values to compare with? [AA] Maybe these 2 examples are enough, showing the importance of geometry and MC treatment. However some rewrighting is in order.}
 
@@ -619,7 +619,7 @@ which is absent in our simulation, might contribute to the Cronin effect
 significantly. This might explain why some of our model implementations 
 underestimate the observed effect, yet, no quantitative estimation exists yet, 
 it is therefore not possible to account for it properly. In order to study the 
-transverse momentum effects in more details, $\Delta P_T^2$ seems more 
+transverse momentum effects in more details, $\Delta p_T^2$ seems more 
 suitable. This observable is directly the transverse momentum broadening of the 
 hadrons and it has the advantage to be an average of all events. It is 
 therefore more sensitive to the $p_T$ distribution as a whole.
@@ -636,10 +636,10 @@ simulation (lines) for different transverse momentum broadening implementations
 \end{figure}
 
 The result from HERMES \cite{Airapetian:2009jy}, shown in figure~%
-\ref{fig:PtC-PtNu}, indicates that $\Delta P_T^2$ is constant with respect to 
+\ref{fig:PtC-PtNu}, indicates that $\Delta p_T^2$ is constant with respect to 
 $\nu$, we see here that this observation has important consequences on models. 
 The BDMPS based simulation gives too much transverse momentum broadening and 
-miss completely the data with an important dependence of $\Delta P_T^2$ to 
+miss completely the data with an important dependence of $\Delta p_T^2$ to 
 $\nu$. But the two other models gives values coherent with the measurement and 
 reproduce the flat result from HERMES much better. In particular, the constant 
 implementation of transverse momentum to all partons, directly based on 
@@ -647,6 +647,7 @@ $\qhat$, gives a result very close to the data. We also notice that the option
 without $p_T$ gives a slightly negative result, coherent with the negative 
 Cronin effect observed previously.
 
+% Need to add eror bar of the first point!
 \begin{figure}[tbp]
   \centering
 \resizebox{0.45\textwidth}{!}{
@@ -660,9 +661,10 @@ simulation (lines) for different transverse momentum broadening implementations
 
 The results as function of $Q^2$, presented in figure~\ref{fig:PtC-PtQ2}, are 
 flat for all models, which is coherent with data \cite{Airapetian:2009jy}. 
-Again here the magnitude of $\Delta P_T^2$ is best reproduced by the constant 
+Again here the magnitude of $\Delta p_T^2$ is best reproduced by the constant 
 and event by event MC models.
 
+% Need to add eror bar of the first point!
 \begin{figure}[tbp]
   \centering
 \resizebox{0.45\textwidth}{!}{
@@ -674,10 +676,10 @@ section~\ref{sec:ptbroad}).}
 \label{fig:PtC-Ptz}
 \end{figure}
 
-HERMES results on $\Delta P_T^2$ as a function of $z$, in figure~%
+HERMES results on $\Delta p_T^2$ as a function of $z$, in figure~%
 \ref{fig:PtC-Ptz}, gives a puzzling result. Indeed, the position of the peak is 
 expected to be at $z\gtrsim 0.7$ for pure energy loss models and in general all 
-mixed models attributing $\Delta P_T^2$ effects to parton energy loss (see~%
+mixed models attributing $\Delta p_T^2$ effects to parton energy loss (see~%
 \cite{Accardi:2009qv}, section 8.1.3 for full discussion). Our MC simulation 
 does not appear to reproduce this feature of the models and peaks at much lower 
 $z$, yet it offers a better match with the data. The best fit being the event 
@@ -690,7 +692,7 @@ production of hadrons in our detection window ($z>0.2$ at HERMES). For this
 reason we should not observe in the hadrons all the transverse momentum 
 transferred to the partons. This explains the important discrepancy between our 
 MC based method and a simple scaling of $\qhat$ by $z^2$ to obtain $\Delta 
-P_T^2$.
+p_T^2$.
 
 
 \subsection{Atomic number dependence}
@@ -742,9 +744,9 @@ Finally, in figure~\ref{fig:PtA}, we show our results obtained with the event
 by event MC generated transverse momentum, which indicates a good agreement 
 between the model and the data~\cite{Airapetian:2009jy}. This was not expected 
 from previous studies indicating an important gap between a small $\qhat$ 
-extracted from $\Delta P_T^2$ and a large one necessary to describe the 
+extracted from $\Delta p_T^2$ and a large one necessary to describe the 
 attenuation observed. However, we shown that the translation of the partonic 
-$\qhat$ into the hadronic $\Delta P_T^2$ is not straight forward and needs 
+$\qhat$ into the hadronic $\Delta p_T^2$ is not straight forward and needs 
 precise study. Therefore, the correlation between attenuation and transverse 
 momentum obtained in our MC, which describe the data properly, is an important 
 confirmation of our extraction of $\qhat = 0.36\ \text{GeV}^2/ \text{fm}$.
@@ -755,7 +757,7 @@ confirmation of our extraction of $\qhat = 0.36\ \text{GeV}^2/ \text{fm}$.
 \section{Conclusion}
 
 We shown that Fermi motion has negligible effects on multiplicity ratios and 
-small effects on $\Delta P_T^2$, which can be accounted for easily at HERMES 
+small effects on $\Delta p_T^2$, which can be accounted for easily at HERMES 
 energy. However, more significant effects are to be expected at lower energy 
 experiments such as the one from the CLAS collaboration~%
 \cite{Brooks:2009xg,DupreQNP}. We also show that this problem can be suppressed 
@@ -768,12 +770,12 @@ with our MC simulation lead to the setting of our only parameter $\qhat = 0.36\
 $z$ dependence, but does not seem to reproduce properly the $\nu$ dependence. 
 This might be due to a problem of the quenching weight calculation, yet it is 
 difficult to rule out other possible sources. However, the good description of 
-$\Delta P_T^2$ with the same setting is particularly striking. Indeed, the 
+$\Delta p_T^2$ with the same setting is particularly striking. Indeed, the 
 Monte-Carlo event by event generator gives access to complicated and intricate 
 effects between fragmentation and nuclear effects. We analyzed this in more 
 details with the comparison between the different models of parton transverse 
 momentum broadening and showed the direct but complicated link with the 
-observable $\Delta P_T^2$. In particular, we observe that the link between the 
+observable $\Delta p_T^2$. In particular, we observe that the link between the 
 transverse momentum of the parton and the one observed on hadrons is strongly 
 affected by the hadron attenuation. This difficulty is making the MC procedure 
 the most reliable to describe this observable. 
