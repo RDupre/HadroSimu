@@ -124,10 +124,23 @@ Thomas Jefferson National Accelerator Facility, Newport News, VA 23606, USA}
 % The correct dates will be entered by Springer
 %
 \abstract{
-We present a Monte-Carlo simulation of hadron quenching in semi-inclusive electron-nucleus collisions, and compare its results with experimental data on hadron multiplicity ratios and transverse momentum broadening from the HERMES experiment. The simulation is based on the Pythia event generator, to which we add nuclear effects, such as the Fermi motion of nucleons, the parton energy loss and the parton transverse momentum broadening. Fermi motion effect appear in our simulation to be non negligible for experiments performed at Jefferson Lab energies and also relevant, for selected observables, for the HERMES experiment.
-The energy loss of final state partons propagating through the nuclear medium is implemented following the quenching weight formalism by Salgado and Wiedemann. Different ways of treating the transverse parton momentum broadening are discussed. 
-%We obtain our best result for the combined description of both multiplicity ratios and transverse momentum broadening from HERMES by using a Monte-Carlo method completely based on the Salgado and Wiedemann calculation. 
-Hadron multiplicities and transverse momentum broadening are typically well described by using a transport coefficient $\qhat = 0.36\ \text{GeV}^2/ \text{fm}$. One exception is the dependence of the hadron multiplicity on the virtual photon energy, $\nu$, which is possibly uncovering the limitations in the adopted theoretical description of the parton energy loss process.
+We present a Monte-Carlo simulation of hadron quenching in semi-inclusive 
+electron-nucleus collisions, and compare its results with experimental data 
+on hadron multiplicity ratios and transverse momentum broadening from the 
+HERMES experiment. The simulation is based on the Pythia event generator, to 
+which we add nuclear effects, such as the Fermi motion of nucleons, the parton 
+energy loss and the parton transverse momentum broadening. Fermi motion effect 
+appears in our simulation to be non negligible for experiments performed at 
+Jefferson Lab energies and also relevant, for selected observables, for the 
+HERMES experiment. The energy loss of final state partons propagating through 
+the nuclear medium is implemented following the quenching weight formalism by 
+Salgado and Wiedemann. Different ways of treating the transverse parton 
+momentum broadening are discussed. Hadron multiplicities and transverse 
+momentum broadening are typically well described by using a transport 
+coefficient $\qhat = 0.34\pm0.04 \text{GeV}^2/ \text{fm}$. One exception is 
+the dependence of the hadron multiplicity on the virtual photon energy, $\nu$, 
+which is possibly uncovering the limitations in the adopted theoretical 
+description of the parton energy loss process.
 } %end of abstract
 %
 \maketitle
@@ -135,28 +148,110 @@ Hadron multiplicities and transverse momentum broadening are typically well desc
 \section{Introduction}
 \label{intro}
 
-Parton energy loss in the nuclear medium has been extensively used in the last decade as a sensitive probe of the Quark-Gluon Plasma (QGP) created in heavy ion collisions at the Relativistic Heavy Ion Collider (RHIC) \cite{Adams:2005dq,Adcox:2004mh} and the Large Hadron Collider (LHC) \cite{Aamodt:2010jd,CMS:2012aa}. The idea is that a hard scattered parton traverses the produced QGP and interacts with its color field. The subsequent in-medium parton rescattering causes parton momentum broadening and energy loss by non-Abelian gluon radiation. In turn, this manifest itself in a suppression of high-energy hadron and jet production, and in a broadening of the hadron momentum spectrum or a modification of the jet shape. These effects are often collectively referred to as ``jet quenching''.
-The properties of the medium can then be reconstructed from the nuclear modification of hadron and jet production once the in-medium parton propagation dynamics is theoretically under control. 
+Parton energy loss in the nuclear medium has been extensively used in the last 
+decade as a sensitive probe of the Quark-Gluon Plasma (QGP) created in heavy 
+ion collisions at the Relativistic Heavy Ion Collider (RHIC) \cite{Adams:2005dq,%
+Adcox:2004mh} and the Large Hadron Collider (LHC)~\cite{Aamodt:2010jd,%
+CMS:2012aa}. The idea is that a hard scattered parton traverses the produced 
+QGP and interacts with its color field. The subsequent in-medium parton 
+rescattering causes parton momentum broadening and energy loss by non-Abelian 
+gluon radiation. In turn, this manifest itself in a suppression of high-energy 
+hadron and jet production, and in a broadening of the hadron momentum spectrum 
+or a modification of the jet shape. These effects are often collectively 
+referred to as ``jet quenching''. The properties of the medium can then be 
+reconstructed from the nuclear modification of hadron and jet production once 
+the in-medium parton propagation dynamics is theoretically under control. 
 
-Most of the theoretical and phenomenological work in recent years has been devoted to the study of parton energy loss in ``hot QCD matter'' with the goal of utilizing hadron quenching and momentum broadening as a tomographical probe of the QGP \cite{Majumder:2010qh}. However, considerable theoretical uncertainties exist within and among the various energy loss calculations, and these need to be clarified to turn jet quenching into a truly quantitative tool for QGP characterization \cite{Armesto:2011ht}. In this perspective, studying parton propagation in ``cold nuclear matter'' \cite{Accardi:2009qv} provides one with the possibility to test theoretical calculations and assumptions in a known medium -- a nucleus target of known density and composition. Examples are nuclear modification of hadron and jet production in $e+A$ collisions, as well as of lepton pair production in $p+A$ collisions. In either case, and contrary to $A+A$ collisions, the exchanged hard four momentum is well constrained experimentally and the multiplicity in the final state is small providing an ideal theoretical and experimental environment. Thus the approximation schemes and calculation techniques adopted in the different energy loss models (some of which are in fact derived for $e+A$ collisions and applied under simplifying assumptions to propagation through hot QCD matter) can be tested on actual experimental data, providing a set of benchmarks that go beyond those afforded by the use of a theoretical ``brick'' of QCD matter \cite{Armesto:2011ht}. 
+Most of the theoretical and phenomenological work in recent years has been 
+devoted to the study of parton energy loss in ``hot QCD matter'' with the goal 
+of utilizing hadron quenching and momentum broadening as a tomographical probe 
+of the QGP \cite{Majumder:2010qh}. However, considerable theoretical 
+uncertainties exist within and among the various energy loss calculations, and 
+these need to be clarified to turn jet quenching into a truly quantitative tool 
+for QGP characterization \cite{Armesto:2011ht}. In this perspective, studying 
+parton propagation in ``cold nuclear matter'' \cite{Accardi:2009qv} provides 
+one with the possibility to test theoretical calculations and assumptions in a 
+known medium -- a nucleus target of known density and composition. Examples are 
+nuclear modification of hadron and jet production in $e+A$ collisions, as well 
+as lepton pair production in $p+A$ collisions. In either case, and contrary to 
+$A+A$ collisions, the exchanged hard four momentum is well constrained 
+experimentally and the multiplicity in the final state is small providing an 
+ideal theoretical and experimental environment. Thus, the approximation schemes 
+and calculation techniques adopted in the different energy loss models (some of 
+which are in fact derived for $e+A$ collisions and applied under simplifying 
+assumptions to propagation through hot QCD matter) can be tested on actual 
+experimental data, providing a set of benchmarks that go beyond those afforded 
+by the use of a theoretical ``brick'' of QCD matter \cite{Armesto:2011ht}. 
 
-Hadron quenching in $e+A$ collisions is important not only as a test of energy loss models, but also to study the color field of a nucleus. Indeed, the transverse momentum broadening due to the energy loss can be linked 
+Hadron quenching in $e+A$ collisions is important not only as a test of energy 
+loss models, but also to study the color field of a nucleus. Indeed, the 
+transverse momentum broadening due to the energy loss can be linked 
 to the gluon distribution~\cite{Baier:1996sk} and, eventually, to the gluon 
 saturation scale~\cite{Kopeliovich:2010aa}. More in general, parton propagation
-can be described in terms of a number of ``transport coefficients'' characterizing the medium and controlling the parton's transverse momentum broadening, longitudinal drag, and diffusion \cite{Majumder:2008zg,Majumder:2007hx,Idilbi:2008vm,other-transport-coefficients?}. These can be given a field theoretical definition in terms of gauge invariant gluon and quark nuclear correlators, that provide a first-principles characterization of the medium the parton is propagating through and can be  extracted from experimental data on nuclear modifications of hadron and jet production. The possibility to calculate transport coefficients in lattice QCD has been recently discussed \cite{Majumder:2012sh}. Finally, it was recently shown that the transverse momentum dependence of azimuthal asymmetries in $e+A$ collisions is sensitive to the relative shape of various transverse momentum dependent parton distributions functions of the nucleons \cite{Gao:2010mj,Song:2010pf,Song:2013sja}. So to speak, one can use the nucleus as a microscope to study the structure of its nucleons.
+can be described in terms of a number of ``transport coefficients'' 
+characterizing the medium and controlling the parton's transverse momentum 
+broadening, longitudinal drag, and diffusion \cite{Majumder:2008zg,%
+Majumder:2007hx,Idilbi:2008vm}. These can be given a field theoretical 
+definition in terms of gauge invariant gluon and quark nuclear correlators, 
+that provide a first-principles characterization of the medium the parton is 
+propagating through and can be extracted from experimental data on nuclear 
+modifications of hadron and jet production. The possibility to calculate 
+transport coefficients in lattice QCD has been also recently discussed 
+\cite{Majumder:2012sh,see talk at EIC UG for recent developments}. Finally, 
+it was recently shown that the transverse momentum dependence of azimuthal 
+asymmetries in $e+A$ collisions is sensitive to the relative shape of various 
+transverse momentum dependent parton distributions functions of the nucleons 
+\cite{Gao:2010mj,Song:2010pf,Song:2013sja}. So to speak, one can use the 
+nucleus as a microscope to study the structure of its nucleons.
 
+In order to study parton (rather than hadron) propagation in cold nuclei, one 
+needs to select events with large longitudinal momentum of the exchanged 
+virtual photon compared to the nucleus, to ensure that the propagating quark 
+has a large energy and the hadronization process is boosted outside the 
+nucleus. In $e+A$ collisions this requires a large enough center of mass energy 
+range (data are available from JLab at 5 GeV, HERMES at 27 GeV and EMC at 
+100-280~GeV electron beam energy, and in the future at even higher energy from 
+the planned Electron Ion Collider \cite{Accardi:2009qv}). In Drell-Yan 
+measurements the hadronization problem is absent and one can isolate parton 
+energy loss at any energy. However the cross section is also affected by 
+initial state effects such as quark antishadowing that can obscure energy loss 
+effects. In this article, we will restrict our analysis to $e+A$ collisions.
 
-In order to study parton (rather than hadron) propagation in cold nuclei, one needs to select events with large longitudinal momentum of the exchanged virtual photon compared to the nucleus, to ensure that the propagating quark has a large energy and the hadronization process is boosted outside the nucleus. In $e+A$ collisions this requires a large enough center of mass energy range  (data are available from JLab at 5 GeV, HERMES at 27 GeV and EMC at 100-280 GeV electron beam energy, and in the future at even higher energy from the planned Electron Ion Collider \cite{Accardi:2009qv}). In Drell-Yan measurements the hadronization problem is absent and one can isolate parton energy loss from it. However the cross section is also affected by initial state effects such as quark antishadowing that can obscure energy loss effects. Therefore in this article we will restrict our analysis to $e+A$ collisions.
+The amount of information that can be obtained from experimental data on 
+nuclear Deep Inelastic Scattering (nDIS) is, however, directly limited by our 
+capability to infer the parton energy loss and transverse momentum broadening 
+from the observed hadronic spectra. The available analytic calculations 
+\cite{Accardi:2009qv} are limited in this respect by the underlying collinear 
+factorization approximation, in which the hadron moves in the same direction 
+as the parton it originates from, and carries a fraction of its momentum 
+determined by its fragmentation function. In reality, the hadronization process 
+is more complex, and it is important to account in a more realistic way for 
+fragmentation effects on an event by event basis, both for a more accurate 
+mapping of hadron to parton energy loss effects and for a more precise 
+implementation of the experimental cuts.
 
-The amount of information that can be obtained from experimental data on nDIS is, however, directly limited by our capability to infer the parton energy loss and transverse momentum broadening from the observed hadronic spectra. The available analytic calculations \cite{Accardi:2009qv} are limited in this respect by the underlying collinear factorization approximation, in which 
-the hadron moves in the same direction as the parton it originates from, and carries a fraction of its momentum determined by its fragmentation function. In reality the hadronization process is more complex, and it is important to account in a more realistic way for fragmentation effects on an event by event basis, both for a more accurate mapping of hadron to parton energy loss effects and for a more precise implementation of the experimental cuts.
-
-
-In this perspective, we have developed a Monte Carlo simulation of hadron quenching for nuclear Deep Inelastic Scattering (nDIS). While for the case of hot QCD matter there exist a large number of sophisticated simulations \cite{some-review-with-hot-MCs,Buzzatti:2010ck}, none has so far been developed for $e+A$ collision, with the exception of that in Ref~\cite{Majumder:2009zu} that however does not include hadronization of the hard-scattered partons. The simulation we describe in this article is based on the Pythia event generator, which takes care of the hard photon-parton interaction at the nucleon level, and uses the Lund string model for parton-to-hadron fragmentation with full account of energy-momentum conservation. Final state nuclear effects are then treated in a pure parton energy loss framework, with neglect of hadron absorption effects. As discussed this can be easily motivated at high enough hadron energy, since hadron production is boosted outside of the nuclear medium (although just how high this energy should be has not yet been experimentally determined \cite{Accardi:2011mz}). As for initial state nuclear effects, we include Fermi motion and binding energy corrections {\bf (do we?) -- [AA] this has to be checked in the code: if a delta-function imposing that the (A-1) spectaor is on-shell is included in the kinematics then yes, we are including binding although in an approximate way.  }, but neglect nuclear modifications of parton distributions because these largely cancel between the numerator and denominator of the chosen observables. In this first effort we focus on methodology and test our simulation on a limited set of HERMES data. A detailed phenomenological analysis of all available experimental data is left for future work.
-
+In this perspective, we have developed a Monte Carlo simulation of hadron 
+quenching for nDIS. While for the case of hot QCD matter there exist a large 
+number of sophisticated simulations \cite{some-review-of-hot-MCs,%
+Buzzatti:2010ck}, none has so far been developed for $e+A$ collision, with 
+the exception of that in Ref~\cite{Majumder:2009zu} that however does not 
+include hadronization of the hard-scattered partons. The simulation we 
+describe in this article is based on the Pythia event generator, which 
+takes care of the hard photon-parton interaction at the nucleon level, and uses 
+the Lund string model for parton-to-hadron fragmentation with full account of 
+energy-momentum conservation. Final state nuclear effects are treated in a pure 
+parton energy loss framework, with neglect of hadron absorption effects. As 
+discussed, this can be easily motivated at high enough hadron energy, since 
+hadron production is boosted outside of the nuclear medium (although just how 
+high this energy should be has not yet been experimentally determined 
+\cite{Accardi:2011mz}). As for initial state nuclear effects, we include Fermi 
+motion, but neglect nuclear modifications of parton distributions, because 
+these largely cancel in the chosen observables. In this first effort, we 
+focus on methodology and test our simulation on a limited set of HERMES data
+\cite{Airapetian:2011jp}. A detailed phenomenological analysis of all available 
+experimental data is left for future work.
 
 The paper is structured as follows.....................
-
 
 
 \section{Observables and kinematic variables of interest}
