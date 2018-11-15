@@ -20,8 +20,8 @@
    PtBroad->SetFrameBorderMode(0);
    PtBroad->SetLeftMargin(0.17);
    
-   Double_t exp = .333;
-   TH1 *cnu_p = new TH2F("cnu_p"," ",10,1,pow(166.375 ,exp),5,-0.01,.035);
+   Double_t exposant = .333;
+   TH1 *cnu_p = new TH2F("cnu_p"," ",10,1,pow(166.375 ,exposant),5,-0.01,.035);
    cnu_p->SetStats(0);
    cnu_p->GetXaxis()->SetTitle("A^{1/3}");
    cnu_p->GetXaxis()->CenterTitle(true);
@@ -46,10 +46,10 @@
    gr0->SetMarkerStyle(20);
    gr0->SetMarkerColor(4);
    gr0->SetLineColor(4);
-   gr0->SetPoint(0,pow(2.  ,exp),0.0000); gr0->SetPointError(0,0,0.0002);
-   gr0->SetPoint(1,pow(20. ,exp),0.0087); gr0->SetPointError(1,0,0.0002);
-   gr0->SetPoint(2,pow(84. ,exp),0.0216); gr0->SetPointError(2,0,0.0002);
-   gr0->SetPoint(3,pow(131.,exp),0.0255); gr0->SetPointError(3,0,0.0002);
+   gr0->SetPoint(0,pow(2.  ,exposant),0.0000); gr0->SetPointError(0,0,0.0002);
+   gr0->SetPoint(1,pow(20. ,exposant),0.0087); gr0->SetPointError(1,0,0.0002);
+   gr0->SetPoint(2,pow(84. ,exposant),0.0216); gr0->SetPointError(2,0,0.0002);
+   gr0->SetPoint(3,pow(131.,exposant),0.0255); gr0->SetPointError(3,0,0.0002);
    gr0->Draw("p");
 // // // // //
 
@@ -61,10 +61,10 @@
    gr1->SetMarkerStyle(23);
    gr1->SetMarkerColor(2);
    gr1->SetLineColor(2);
-   gr1->SetPoint(0,pow(3.7 ,exp),-0.00111); gr1->SetPointError(0,0,0.002117);
-   gr1->SetPoint(1,pow(18.5,exp),0.003713); gr1->SetPointError(1,0,0.001466);
-   gr1->SetPoint(2,pow(81. ,exp),0.017850); gr1->SetPointError(2,0,0.001564);
-   gr1->SetPoint(3,pow(126.,exp),0.023974); gr1->SetPointError(3,0,0.001954);
+   gr1->SetPoint(0,pow(3.7 ,exposant),-0.0011); gr1->SetPointError(0,0,0.002117);
+   gr1->SetPoint(1,pow(18.5,exposant),0.0031 ); gr1->SetPointError(1,0,0.001466);
+   gr1->SetPoint(2,pow(81. ,exposant),0.0158 ); gr1->SetPointError(2,0,0.001564);
+   gr1->SetPoint(3,pow(126.,exposant),0.0216 ); gr1->SetPointError(3,0,0.001954);
    gr1->Draw("p");
 // // // // //
 
@@ -74,10 +74,10 @@
    gr2->SetTitle("Graph");
    gr2->SetFillColor(1);
    gr2->SetMarkerStyle(22);
-   gr2->SetPoint(0,pow(4.5 ,exp),0.000586); gr2->SetPointError(0,0,0.002476);
-   gr2->SetPoint(1,pow(22. ,exp),0.007036); gr2->SetPointError(1,0,0.001857);
-   gr2->SetPoint(2,pow(89. ,exp),0.017524); gr2->SetPointError(2,0,0.001922);
-   gr2->SetPoint(3,pow(137.,exp),0.023127); gr2->SetPointError(3,0,0.001792);
+   gr2->SetPoint(0,pow(4.5 ,exposant),0.0003); gr2->SetPointError(0,0,0.002476);
+   gr2->SetPoint(1,pow(22. ,exposant),0.0065); gr2->SetPointError(1,0,0.001857);
+   gr2->SetPoint(2,pow(89. ,exposant),0.0159); gr2->SetPointError(2,0,0.001922);
+   gr2->SetPoint(3,pow(137.,exposant),0.0213); gr2->SetPointError(3,0,0.001792);
    gr2->Draw("p");
 // // // // //
 

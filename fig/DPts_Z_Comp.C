@@ -44,10 +44,10 @@
    gr4->SetMarkerStyle(8);
    gr4->SetMarkerColor(1);
    gr4->SetLineColor(1);
-   gr4->SetPoint(0,0.31, 0.0285); gr4->SetPointError(0,0,0.0000);
-   gr4->SetPoint(1,0.51, 0.0338); gr4->SetPointError(1,0,0.0047);
-   gr4->SetPoint(2,0.71, 0.0125); gr4->SetPointError(2,0,0.0103);
-   gr4->SetPoint(3,0.90,-0.0015); gr4->SetPointError(3,0,0.0148);
+   gr4->SetPoint(0,0.31, 0.0269); gr4->SetPointError(0,0,sqrt(0.0019*0.0019+0.0013*0.0013));
+   gr4->SetPoint(1,0.54, 0.0300); gr4->SetPointError(1,0,sqrt(0.0033*0.0033+0.0026*0.0026));
+   gr4->SetPoint(2,0.75, 0.0071); gr4->SetPointError(2,0,sqrt(0.0067*0.0067+0.0069*0.0069));
+   gr4->SetPoint(3,0.94,-0.0021); gr4->SetPointError(3,0,sqrt(0.0116*0.0116+0.0082*0.0082));
    gr4->Draw("p");
 
    TGraphErrors *gr0 = new TGraphErrors(9);

@@ -49,15 +49,15 @@
    gr4->SetLineColor(1);
    gr4->SetLineStyle(1);
    gr4->SetLineWidth(3);
-   gr4->SetPoint(0,0.1,0.956866); 
-   gr4->SetPoint(1,0.2,0.941912);
-   gr4->SetPoint(2,0.3,0.931585);
-   gr4->SetPoint(3,0.4,0.922131);
-   gr4->SetPoint(4,0.5,0.906712);
-   gr4->SetPoint(5,0.6,0.896003);
-   gr4->SetPoint(6,0.7,0.888614);
-   gr4->SetPoint(7,0.8,0.879788);
-   gr4->SetPoint(8,0.9,0.878628);
+   gr4->SetPoint(0,0.1,0.940576); 
+   gr4->SetPoint(1,0.2,0.938134);
+   gr4->SetPoint(2,0.3,0.931912);
+   gr4->SetPoint(3,0.4,0.924263);
+   gr4->SetPoint(4,0.5,0.915390);
+   gr4->SetPoint(5,0.6,0.900000);
+   gr4->SetPoint(6,0.7,0.883862);
+   gr4->SetPoint(7,0.8,0.886312);
+   gr4->SetPoint(8,0.9,0.881027);
    gr4->Draw("c");
    
    TGraphErrors *gr5 = new TGraphErrors(8);
@@ -69,15 +69,15 @@
    gr5->SetLineColor(3);
    gr5->SetLineStyle(2);
    gr5->SetLineWidth(3);
-   gr5->SetPoint(0,0.1,0.834218); 
-   gr5->SetPoint(1,0.2,0.805106);
-   gr5->SetPoint(2,0.3,0.786054);
-   gr5->SetPoint(3,0.4,0.769685);
-   gr5->SetPoint(4,0.5,0.747413);
-   gr5->SetPoint(5,0.6,0.730746);
-   gr5->SetPoint(6,0.7,0.713411);
-   gr5->SetPoint(7,0.8,0.705894);
-   gr5->SetPoint(8,0.9,0.706724);
+   gr5->SetPoint(0,0.1,0.8131406); 
+   gr5->SetPoint(1,0.2,0.7989641);
+   gr5->SetPoint(2,0.3,0.7871425);
+   gr5->SetPoint(3,0.4,0.7763142);
+   gr5->SetPoint(4,0.5,0.7516662);
+   gr5->SetPoint(5,0.6,0.7339302);
+   gr5->SetPoint(6,0.7,0.7060688);
+   gr5->SetPoint(7,0.8,0.7035939);
+   gr5->SetPoint(8,0.9,0.6785535);
    gr5->Draw("c");
    
    TGraphErrors *gr6 = new TGraphErrors(8);
@@ -89,15 +89,15 @@
    gr6->SetLineColor(4);
    gr6->SetLineStyle(4);
    gr6->SetLineWidth(3);
-   gr6->SetPoint(0,0.1,0.777322); 
-   gr6->SetPoint(1,0.2,0.745185);
-   gr6->SetPoint(2,0.3,0.723960);
-   gr6->SetPoint(3,0.4,0.709263);
-   gr6->SetPoint(4,0.5,0.684913);
-   gr6->SetPoint(5,0.6,0.666135);
-   gr6->SetPoint(6,0.7,0.651204);
-   gr6->SetPoint(7,0.8,0.642369);
-   gr6->SetPoint(8,0.9,0.646392);
+   gr6->SetPoint(0,0.1,0.755109); 
+   gr6->SetPoint(1,0.2,0.740145);
+   gr6->SetPoint(2,0.3,0.727334);
+   gr6->SetPoint(3,0.4,0.714331);
+   gr6->SetPoint(4,0.5,0.687154);
+   gr6->SetPoint(5,0.6,0.670305);
+   gr6->SetPoint(6,0.7,0.642591);
+   gr6->SetPoint(7,0.8,0.640457);
+   gr6->SetPoint(8,0.9,0.640739);
    gr6->Draw("c");
    
 

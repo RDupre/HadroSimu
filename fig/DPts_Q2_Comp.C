@@ -44,10 +44,14 @@
    gr4->SetTitle("Graph");
    gr4->SetFillColor(1);
    gr4->SetMarkerStyle(8);
-   gr4->SetPoint(0,1.65,0.0195); gr4->SetPointError(0,0,0.0000);
-   gr4->SetPoint(1,2.75,0.0247); gr4->SetPointError(1,0,0.0050);
-   gr4->SetPoint(2,4.40,0.0325); gr4->SetPointError(2,0,0.0051);
-   gr4->SetPoint(3,7.00,0.03  ); gr4->SetPointError(3,0,0.0088);
+// gr4->SetPoint(0,1.65,0.0195); gr4->SetPointError(0,0,0.0000);
+// gr4->SetPoint(1,2.75,0.0247); gr4->SetPointError(1,0,0.0050);
+// gr4->SetPoint(2,4.40,0.0325); gr4->SetPointError(2,0,0.0051);
+// gr4->SetPoint(3,7.00,0.03  ); gr4->SetPointError(3,0,0.0088);
+   gr4->SetPoint(0,1.4,0.0186); gr4->SetPointError(0,0,sqrt(0.0021*0.0021+0.0013*0.0013));
+   gr4->SetPoint(1,2.5,0.0220); gr4->SetPointError(1,0,sqrt(0.0033*0.0033+0.0026*0.0026));
+   gr4->SetPoint(2,3.9,0.0277); gr4->SetPointError(2,0,sqrt(0.0040*0.0040+0.0020*0.0020));
+   gr4->SetPoint(3,6.5,0.0288); gr4->SetPointError(3,0,sqrt(0.0064*0.0064+0.0028*0.0028));
    gr4->Draw("p");
 
    TGraphErrors *gr0 = new TGraphErrors(7);
